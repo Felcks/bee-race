@@ -13,10 +13,12 @@ fun NavController.navigateToHomeScreen(
     this.navigate(HomeScreenRoute, navOptions)
 }
 
-fun NavGraphBuilder.homeScreen() {
+fun NavGraphBuilder.homeScreen(
+    navigateToRaceScreen: (startTime: Int) -> Unit,
+) {
     composable(
         HomeScreenRoute
     ) {
-        HomeScreen()
+        HomeScreen(navigateToRaceScreen)
     }
 }

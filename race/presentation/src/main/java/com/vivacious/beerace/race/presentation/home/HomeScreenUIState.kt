@@ -1,6 +1,6 @@
 package com.vivacious.beerace.race.presentation.home
 
-
 data class HomeScreenUIState(
-    var loading: Boolean = false
+    var newRaceTimeInSeconds: Int? = null,
+    var error: String? = null
 )

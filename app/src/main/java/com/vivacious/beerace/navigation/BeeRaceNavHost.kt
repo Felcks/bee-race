@@ -6,6 +6,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.vivacious.beerace.race.presentation.home.HomeScreenRoute
 import com.vivacious.beerace.race.presentation.home.homeScreen
+import com.vivacious.beerace.race.presentation.home.navigateToHomeScreen
+import com.vivacious.beerace.race.presentation.race.navigateToRaceScreen
+import com.vivacious.beerace.race.presentation.race.raceScreen
 
 @Composable
 fun BeeRaceNavHost(modifier: Modifier = Modifier) {
@@ -16,6 +19,11 @@ fun BeeRaceNavHost(modifier: Modifier = Modifier) {
         startDestination = HomeScreenRoute,
         modifier = modifier
     ) {
-        homeScreen()
+        homeScreen(navigateToRaceScreen = {
+            navController.navigateToRaceScreen(it)
+        })
+        raceScreen(navigateToHomeScreen = {
+            navController.navigateToHomeScreen()
+        })
     }
 }
