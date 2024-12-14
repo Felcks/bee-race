@@ -21,4 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Bee Race"
 include(":app")
- 
+include(":core:presentation")
+include(":core:domain")
+include(":core:network")
+include(":race:domain")
+include(":race:presentation")
+include(":race:domainImpl")
+include(":race:network")

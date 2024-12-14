@@ -10,6 +10,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/domain" />
+            <option value="$PROJECT_DIR$/core/network" />
+            <option value="$PROJECT_DIR$/core/presentation" />
+            <option value="$PROJECT_DIR$/race" />
+            <option value="$PROJECT_DIR$/race/domain" />
+            <option value="$PROJECT_DIR$/race/domainImpl" />
+            <option value="$PROJECT_DIR$/race/network" />
+            <option value="$PROJECT_DIR$/race/presentation" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

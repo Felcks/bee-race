@@ -27,7 +27,6 @@ coroutines-test = "1.8.1-Beta"
 turbine = "1.1.0"
 room = "2.6.1"
 compose-animation = "1.7.5"
-firebase = "33.6.0"
 
 
 [libraries]
@@ -86,15 +85,6 @@ compose-animation = { module = "androidx.compose.animation:animation", version.r
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
-
-androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "paging-runtime" }
-androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging-runtime" }
-androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging-runtime" }
-
-firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
-firebase-auth = { module = "com.google.firebase:firebase-auth" }
-firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
-
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
