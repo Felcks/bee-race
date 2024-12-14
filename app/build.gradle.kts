@@ -36,6 +36,13 @@ android {
     buildFeatures {
         compose = true
     }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            merges += "META-INF/LICENSE.md"
+            merges += "META-INF/LICENSE-notice.md"
+        }
+    }
 }
 
 dependencies {
@@ -72,4 +79,8 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:network"))
     implementation(project(":core:presentation"))
+    implementation(project(":race:domain"))
+    implementation(project(":race:domainImpl"))
+    implementation(project(":race:network"))
+    implementation(project(":race:presentation"))
 }
