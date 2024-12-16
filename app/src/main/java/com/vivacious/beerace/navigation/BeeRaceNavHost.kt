@@ -23,7 +23,7 @@ fun BeeRaceNavHost(modifier: Modifier = Modifier) {
             navController.navigateToRaceScreen(it)
         })
         raceScreen(navigateToHomeScreen = {
-            navController.navigateToHomeScreen()
+            navController.navigateToHomeScreen(it)
         })
     }
 }

@@ -4,13 +4,21 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.vivacious.beerace.race.domain.models.Bee
+import com.vivacious.beerace.race.presentation.models.BeeModel
 
 const val HomeScreenRoute = "home_screen_navigation"
 
 fun NavController.navigateToHomeScreen(
-    navOptions: NavOptions? = null
+    bee: Bee?,
+    navOptions: NavOptions? = null,
 ) {
-    this.navigate(HomeScreenRoute, navOptions)
+    bee?.let {
+        val model = BeeModel.fromAdapter(it)
+        this.previousBackStackEntry?.savedStateHandle?.set("winner", model)
+        popBackStack()
+    } ?:  this.navigate(HomeScreenRoute, navOptions)
 }
 
 fun NavGraphBuilder.homeScreen(
@@ -18,7 +26,10 @@ fun NavGraphBuilder.homeScreen(
 ) {
     composable(
         HomeScreenRoute
-    ) {
-        HomeScreen(navigateToRaceScreen)
+    ) { backstackEntry ->
+        val winner : BeeModel? = backstackEntry
+            .savedStateHandle["winner"]
+
+        HomeScreen(navigateToRaceScreen, winner)
     }
 }

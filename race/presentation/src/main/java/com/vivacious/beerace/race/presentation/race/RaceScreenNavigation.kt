@@ -6,6 +6,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.vivacious.beerace.race.domain.models.Bee
 
 const val RaceScreenRoute = "race_screen_navigation"
 
@@ -17,7 +18,7 @@ fun NavController.navigateToRaceScreen(
 }
 
 fun NavGraphBuilder.raceScreen(
-    navigateToHomeScreen: () -> Unit,
+    navigateToHomeScreen: (bee: Bee) -> Unit,
 ) {
     composable(
         route = "$RaceScreenRoute/{startTime}",

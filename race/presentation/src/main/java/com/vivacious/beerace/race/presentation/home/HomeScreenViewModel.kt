@@ -21,8 +21,13 @@ class HomeScreenViewModel @Inject constructor(
 
     fun handleScreenEvents(event: HomeScreenEvent) {
         when (event) {
-            HomeScreenEvent.startBeeRace -> startBeeRace()
+            HomeScreenEvent.StartBeeRace -> startBeeRace()
+            HomeScreenEvent.ResetTimer -> resetTimer()
         }
+    }
+
+    private fun resetTimer() {
+        _uiState.value = _uiState.value.copy(newRaceTimeInSeconds = null)
     }
 
     private fun startBeeRace() {

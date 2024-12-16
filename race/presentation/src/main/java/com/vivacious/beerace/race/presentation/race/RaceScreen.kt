@@ -24,11 +24,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.vivacious.beerace.race.domain.models.Bee
 import com.vivacious.beerace.race.presentation.components.RaceBeeMolecule
 
 @Composable
 fun RaceScreen(
-    navigateToHomeScreen: () -> Unit,
+    navigateToHomeScreen: (bee: Bee) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: RaceScreenViewModel = hiltViewModel()
 ) {
@@ -69,7 +70,7 @@ fun RaceScreen(
 
             LaunchedEffect(uiState.winner) {
                 uiState.winner?.let {
-                    navigateToHomeScreen()
+                    navigateToHomeScreen(it)
                 }
             }
         }
