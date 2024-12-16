@@ -91,7 +91,22 @@ fun RaceBeeMolecule(bee: Bee, position: Int, modifier: Modifier = Modifier) {
                 BeePositionAtom(bee, position, alignment = Alignment.Start)
             }
 
-            Text("M", modifier = Modifier.padding(end = 16.dp))
+            val medal: Int? = when (position) {
+                1 -> R.drawable.ic_gold_medal
+                2 -> R.drawable.ic_silver_medal
+                3 -> R.drawable.ic_bronze_medal
+                else -> null
+            }
+
+            medal?.let {
+                Image(
+                    painter = painterResource(it),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(end = 16.dp)
+                        .size(32.dp)
+                )
+            }
         }
 
         Spacer(modifier = Modifier.padding(top = 16.dp))
@@ -99,6 +114,14 @@ fun RaceBeeMolecule(bee: Bee, position: Int, modifier: Modifier = Modifier) {
         HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp))
     }
 
+}
+
+@Preview
+@Composable
+private fun RaceBeeMoleculePreview() {
+    BeeRaceTheme {
+        RaceBeeMolecule(RacePreviewUiDataProvider().bees.first(), 1)
+    }
 }
 
 @Preview
